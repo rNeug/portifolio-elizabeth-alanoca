@@ -424,6 +424,60 @@ nav {
     padding: 100px 0;
 }
 
+.gestao-midias {
+    padding: 100px 0;
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+.gestao-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-category-btn {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 10px 30px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(187, 117, 240, 0.5);
+}
+
+.portfolio-category-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(187, 117, 240, 0.8);
+}
+
+.gestao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.gestao-item img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--neon-blue);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gestao-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--neon-pink);
+}
+
 .portfolio-filter {
     display: flex;
     justify-content: center;
@@ -731,5 +785,9 @@ footer {
 
     .nav-links {
         display: none;
+    }
+
+    .gestao-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
