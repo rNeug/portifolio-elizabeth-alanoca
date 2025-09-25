@@ -66,3 +66,31 @@ setInterval(() => {
     currentSlide = (currentSlide + 1) % testimonialSlides.length;
     showSlide(currentSlide);
 }, 5000);
+
+// EmailJS para envio do formulário
+(function() {
+    emailjs.init("IS1YkZV5sapgKNmEI");
+})();
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.querySelector('input[type="text"]').value;
+    const email = document.querySelector('input[type="email"]').value;
+    const message = document.querySelector('textarea').value;
+
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: 'elizaalanoca12@gmail.com'
+    };
+
+    emailjs.send('service_jxwjfi7', 'template_320i72a', templateParams)
+        .then(function(response) {
+            alert('Mensagem enviada com sucesso!');
+            document.getElementById('contactForm').reset();
+        }, function(error) {
+            alert('Erro ao enviar mensagem: ' + error.text);
+        });
+});
